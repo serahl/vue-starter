@@ -5,11 +5,14 @@ requireModule.keys().forEach(fileName => {
   if (fileName === "./index.ts") {
     return;
   }
-  const moduleName = fileName.replace(/(\.\/|\.ts)/g, "");
+  const module = requireModule(fileName).default;
+  const moduleName = module.modulename
+    ? module.modulename
+    : fileName.replace(/(\.\/|\.ts)/g, "");
 
   modules[moduleName] = {
     namespaced: false,
-    ...requireModule(fileName).default
+    ...module
   };
 });
 export default modules;
