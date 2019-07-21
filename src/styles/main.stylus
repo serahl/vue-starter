@@ -1,0 +1,39 @@
+div {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border: 0.5px solid teal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    display: grid;
+    grid-template-areas: 'logo headermenu usermenu' 'content content content';
+    grid-template-columns: 100px 1fr 150px;
+    grid-template-rows: 75px 1fr;
+    row-gap: 5px;
+    height: 100vh;
+    width: 100%;
+}
+
+#logo {
+    grid-area: logo;
+    color: teal;
+}
+
+#headermenu {
+    grid-area: headermenu;
+}
+
+#usermenu {
+    grid-area: usermenu;
+}
+
+#content {
+    grid-area: content;
+    overflow-y: auto;
+}
