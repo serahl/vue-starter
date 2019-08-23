@@ -1,7 +1,6 @@
 /* tslint:disable:no-var-requires */
 import Vuex from "vuex";
-require("babel-plugin-require-context-hook/register")();
-const modules = require("../../src/store/modules").default;
+import modules from "../../src/store/modules";
 import { createLocalVue } from "@vue/test-utils";
 const localVue = createLocalVue();
 

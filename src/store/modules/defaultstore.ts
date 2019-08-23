@@ -1,4 +1,3 @@
-import StoreNames from "../StoreNames";
 const storestate = {
   defaultmessage_prefix: "Hello",
   defaultname: "Default"
@@ -28,7 +27,6 @@ const mutations = {
 
 export default {
   namespaced: true,
-  modulename: StoreNames.DEFAULTSTORE,
   state: storestate,
   getters,
   actions,
