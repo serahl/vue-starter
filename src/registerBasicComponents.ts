@@ -1,15 +1,9 @@
 import Vue from "vue";
-// Require in a base component context
-const requireComponent = require.context(
-  "./components/basic/",
-  false,
-  /[\w-]+\.vue$/
-);
-requireComponent.keys().forEach(fileName => {
-  // Get component config
-  const componentConfig = requireComponent(fileName);
+import * as BasicComponents from "@/components/basic";
 
-  const componentName = fileName.replace(/^\.\//, "").replace(/\.\w+$/, "");
-  // Register component globally
-  Vue.component(componentName, componentConfig.default || componentConfig);
-});
+Object.keys(BasicComponents)
+  .map(key => (BasicComponents as any)[key])
+  .forEach((c: any) => {
+    // // Register component globally
+    Vue.component(c.options.name, c);
+  });

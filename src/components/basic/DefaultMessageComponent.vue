@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import DefaultStoreMixin from "../../mixins/DefaultStoreMixin";
+import DefaultStoreMixin from "@/mixins/DefaultStoreMixin";
 export default Vue.extend({
   name: "DefaultMessageComponent",
   mixins: [DefaultStoreMixin]
